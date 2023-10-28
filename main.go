@@ -17,7 +17,7 @@ func workerPool() {
 	defer cancel()
 
 	wg := &sync.WaitGroup{}
-	toComplete, completedNumbers := make(chan int, 5), make(chan int, 5)
+	toComplete, completedNumbers := make(chan int), make(chan int)
 
 	for i := 0; i < runtime.NumCPU(); i++ {
 		wg.Add(1)
